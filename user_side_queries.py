@@ -5,10 +5,10 @@ def getExams(clg_id,branch_id,mongo):
         "branch_id": branch_id,
         "clg_id":clg_id
     })
-    lst = []
+    elist = []
     for doc in getter:
-        lst.append(doc)
-    return json.dumps({"exams":lst},default=str)
+        elist.append(doc)
+    return json.dumps({"exams":elist},default=str)
 
 def getResults(clg_id,branch_id,mongo):
     # print(clg_id, branch_id, mongo)
@@ -16,7 +16,7 @@ def getResults(clg_id,branch_id,mongo):
         "branch_id": branch_id,
         "clg_id":clg_id
     })
-    lst = []
+    elist = []
     for doc in getter:
-        lst.append(doc)
-    return json.dumps({"results":lst},default=str)
+        elist.append(doc)
+    return json.dumps({"results":elist},default=str)

@@ -19,10 +19,6 @@ def login(email, password, mongo):
             print(getter)
             # getter._id = None
             # getter.password = None
-            ul = []
-            for doc in getter:
-                print(doc)
-                ul.append(doc)
             return json.dumps(getter, default=str)
         else:
             return jsonify({
@@ -32,7 +28,7 @@ def login(email, password, mongo):
 # Signup Function
 
 
-def signup(email, pass1, pass2, isCollege, mongo):
+def signup(email,name, pass1, pass2, mongo):
     dp = random.randint(0, 8)
     if pass1 != pass2:
         return jsonify({
@@ -46,7 +42,7 @@ def signup(email, pass1, pass2, isCollege, mongo):
         "description":"",
         "email": email,
         "profilePic": dp,
-        "isCollege": isCollege
+        # "isCollege": isCollege
     }).inserted_id
     # if user is not present
     if getter is None:

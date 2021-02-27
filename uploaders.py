@@ -2,22 +2,23 @@ import io
 import csv
 from flask import jsonify
 
-def upload(f,data,mongo):
-    if not f:
+def upload(file,data,mongo):
+    if not file:
         return jsonify({
             "status":"No file"
         })
         
-    stream = io.StringIO(f.stream.read().decode("UTF8"), newline=None)
+    stream = io.StringIO(file.stream.read().decode("UTF8"), newline=None)
     csv_input = csv.reader(stream)
     #print("file contents: ", file_contents)
     #print(type(file_contents))
-    print(csv_input)
+    # print(csv_input)
     for row in csv_input:
-        print(row)
+        # print(row)
         if data == "students":
             students = [ "clg_id", "prn_no","name","branch_id","age"]
             doc={}
+            # can be optimized by iterating over the set instead of array
             for n in range(0,len(students)):
                 doc[students[n]] = row[n]
 
@@ -30,6 +31,7 @@ def upload(f,data,mongo):
 
             mongo.db.exams.insert_one(doc)
         else:
+            # undefined will define later on
             results = [ "clg_id", "branch_id","date_of_declaration","result_link"]
             doc={}
             for n in range(0,len(results)):
