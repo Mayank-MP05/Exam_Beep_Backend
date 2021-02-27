@@ -67,11 +67,13 @@ def getProfileDetails():
 ########### Student Side Exam and Result Quries #############
 @app.route('/api/getExams', methods=["POST"])
 def getExams():
+    print("getexam")
     data = request.get_json()
     return user_side_queries.getExams(data["clg_id"],data["branch_id"],mongo)
 
 @app.route('/api/getResults', methods=["POST"])
 def getResults():
+    print("getResults")
     data = request.get_json()
     return user_side_queries.getResults(data["clg_id"],data["branch_id"],mongo)
 
@@ -80,17 +82,20 @@ def getResults():
 
 @app.route('/api/collegeGetStudents', methods=["POST"])
 def getCollegeStudents():
+    print("getCollegeStudents")
     data = request.get_json()
     return college_side_queries.getStudents(data["clg_id"],mongo)
 
 
 @app.route('/api/collegeGetExams', methods=["POST"])
 def getCollegeExams():
+    print("getCollegeExams")
     data = request.get_json()
     return college_side_queries.getExams(data["clg_id"],mongo)
 
 @app.route('/api/collegeGetResults', methods=["POST"])
 def getCollegeResults():
+    print("getCollegeResults")
     data = request.get_json()
     return college_side_queries.getResults(data["clg_id"],mongo)
 
