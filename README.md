@@ -1,8 +1,13 @@
 # EXAM BEEP is here.
-
-[x] Auth
-[x] Upload College Data
-
+- [ ] User Auth
+- [x] Upload Data
+<!-- - [x] Earth (Orbit/Moon) -->
+<!-- - [x] Mars -->
+<!-- - [ ] Jupiter -->
+<!-- - [ ] Saturn -->
+<!-- - [ ] Uranus -->
+<!-- - [ ] Neptune -->
+<!-- - [ ] Comet Haley -->
 
 by Team W3Devs
 - Mayank Pachpande
