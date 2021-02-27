@@ -1,5 +1,5 @@
 # EXAM BEEP is here.
-- [ ] User Auth
+- [x] User Auth
 - [x] Upload Data
 <!-- - [x] Earth (Orbit/Moon) -->
 <!-- - [x] Mars -->
