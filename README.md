@@ -1,7 +1,7 @@
 # EXAM BEEP is here.
 - [x] User Auth
 - [x] Upload Data
-<!-- - [x] Earth (Orbit/Moon) -->
+- [x] Queries
 <!-- - [x] Mars -->
 <!-- - [ ] Jupiter -->
 <!-- - [ ] Saturn -->

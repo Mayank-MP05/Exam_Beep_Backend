@@ -64,6 +64,24 @@ def getProfileDetails():
     data = request.get_json()
     return profile_updater.getProfileFromStuds(data["clg_id"],data["prn_no"],mongo)
 
+####################### College Side Queries #####################
+
+@app.route('/api/collegeGetStudents', methods=["POST"])
+def getCollegeStudents():
+    data = request.get_json()
+    return college_side_queries.getStudents(data["clg_id"],mongo)
+
+
+@app.route('/api/collegeGetExams', methods=["POST"])
+def getCollegeExams():
+    data = request.get_json()
+    return college_side_queries.getExams(data["clg_id"],mongo)
+
+@app.route('/api/collegeGetResults', methods=["POST"])
+def getCollegeResults():
+    data = request.get_json()
+    return college_side_queries.getResults(data["clg_id"],mongo)
+
 
 
 if __name__ == '__main__':
