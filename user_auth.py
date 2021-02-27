@@ -5,7 +5,7 @@ import random
 # Login Function
 
 
-def login(email, password, isCollege, mongo):
+def login(email,password, mongo):
     getter = mongo.db.users.find_one({"email": email})
     # if user is not present in DB
     if getter is None:
@@ -19,10 +19,6 @@ def login(email, password, isCollege, mongo):
             print(getter)
             # getter._id = None
             # getter.password = None
-            ul = []
-            for doc in getter:
-                print(doc)
-                ul.append(doc)
             return json.dumps(getter, default=str)
         else:
             return jsonify({
@@ -32,20 +28,20 @@ def login(email, password, isCollege, mongo):
 # Signup Function
 
 
-def signup(email, pass1, pass2, isCollege, mongo):
+def signup(email,name, pass1, pass2, mongo):
     dp = random.randint(0, 8)
     if pass1 != pass2:
         return jsonify({
             "err": "Password do not match!",
         })
     getter = mongo.db.users.insert_one({
-        "name": "",
+        "name": name,
         "password": pass1,
         "prn_no": "",
         "clg_id": "",
         "email": email,
         "profilePic": dp,
-        "isCollege": isCollege
+        # "isCollege": isCollege
     }).inserted_id
     # if user is not present
     if getter is None:

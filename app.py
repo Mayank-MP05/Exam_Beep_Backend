@@ -32,14 +32,16 @@ def loginHere():
     # print(request)
     data = request.get_json()
     print(data)
-    return user_auth.login(data["email"],data["pass1"],data["isCollege"],mongo)
+    # return user_auth.login(data["email"],data["pass1"],data["isCollege"],mongo)
+    return user_auth.login(data["email"],data["pass1"],mongo)
 
 @app.route("/api/signup",methods=["POST"])
 def SignupHere():
     # print(request)
     data = request.get_json()
     print(data)
-    return user_auth.signup(data["email"],data["pass1"],data["pass2"],data["isCollege"],mongo)  
+    # return user_auth.signup(data["email"],data["pass1"],data["pass2"],data["isCollege"],mongo)  
+    return user_auth.signup(data["email"],data["name"],data["pass1"],data["pass2"],mongo)  
 
 ################ Uploader Functions ########################
 @app.route('/api/upload', methods=["POST"])
@@ -48,7 +50,7 @@ def uploadData():
     # print(request.form)
     # print(request.files)
     file = request.files["fileToBeUploaded"]
-    data = request.get_json()
+    # data = request.get_json()
     # print(request.files["collection"])
     coll = request.form["collection"]
     return uploaders.upload(file,coll,mongo)
