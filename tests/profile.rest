@@ -1,0 +1,28 @@
+POST http://localhost:5000/api/getUserProfile HTTP/1.1
+content-type: application/json
+
+{
+    "clg_id": "CLG1",
+    "prn_no":"1"
+}
+###
+POST http://localhost:5000/api/getUserProfile HTTP/1.1
+content-type: application/json
+
+{
+    "email": "user6@mail.com"
+}
+###
+
+POST http://127.0.0.1:5000/api/updateprofile HTTP/1.1
+content-type: application/json
+
+{
+    "email": "user6@mail.com",
+    "name": "Ranjjet",
+    "username": "",
+    "password": "hi5",
+    "email": "user6@mail.com",
+    "profilePic": 5,
+    "bio": "Music is interesting ..."
+}
