@@ -8,6 +8,8 @@ import csv
 ######### Modules Import ######### 
 import user_auth
 import uploaders
+import profile_updater
+
 
 app = Flask(__name__)
 CORS(app)
@@ -49,6 +51,19 @@ def uploadData():
     # print(request.files["collection"])
     coll = request.form["collection"]
     return uploaders.upload(file,coll,mongo)
+
+################### User PRN updater #######################
+@app.route('/api/userUpdation', methods=["POST"])
+def userUpdation():
+    data = request.get_json()
+    return profile_updater.updateProfile(data["email"],data["prn_no"],data["clg_id"],mongo)
+
+################## Get User Profile ####################
+@app.route('/api/getUserProfile', methods=["POST"])
+def getProfileDetails():
+    data = request.get_json()
+    return profile_updater.getProfileFromStuds(data["clg_id"],data["prn_no"],mongo)
+
 
 
 if __name__ == '__main__':
