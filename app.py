@@ -13,15 +13,15 @@ def hello():
 
 @app.route("/api/login",methods=["POST"])
 def loginHere():
-    print("working")
-    print(request)
+    # print("working")
+    # print(request)
     data = request.get_json()
     print(data)
     return user_auth.login(data["email"],data["pass1"],data["isCollege"],mongo)
 
 @app.route("/api/signup",methods=["POST"])
 def SignupHere():
-    print(request)
+    # print(request)
     data = request.get_json()
     print(data)
     return user_auth.signup(data["email"],data["pass1"],data["pass2"],data["isCollege"],mongo)  
