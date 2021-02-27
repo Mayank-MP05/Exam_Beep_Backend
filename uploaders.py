@@ -31,6 +31,7 @@ def upload(file,data,mongo):
 
             mongo.db.exams.insert_one(doc)
         else:
+            # undefined will define later on
             results = [ "clg_id", "branch_id","date_of_declaration","result_link"]
             doc={}
             for n in range(0,len(results)):
