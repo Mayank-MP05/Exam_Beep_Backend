@@ -18,11 +18,10 @@ def updateProfile(email,prn_no,clg_id,mongo):
     })
     return json.dumps(getter,default=str)
 
-def getProfileFromStuds(clg_id,prn_no,mongo):
+def getProfileFromStuds(email,mongo):
 
     # print(prn_no, clg_id, mongo)
-    getter = mongo.db.students.find_one({
-        "prn_no": prn_no,
-        "clg_id":clg_id
+    getter = mongo.db.users.find_one({
+        "email":email
     })
     return json.dumps(getter,default=str)

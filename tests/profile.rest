@@ -10,8 +10,9 @@ POST http://localhost:5000/api/getUserProfile HTTP/1.1
 content-type: application/json
 
 {
-    "email": "user6@mail.com"
+    "email": "clg2@mail.com"
 }
+
 ###
 
 POST http://127.0.0.1:5000/api/updateprofile HTTP/1.1

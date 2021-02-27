@@ -2,9 +2,9 @@ POST http://localhost:5000//api/userUpdation HTTP/1.1
 content-type: application/json
 
 {
-    "email": "user8@mail.com",
-    "prn_no":"",
-    "clg_id":""
+    "email": "usr2@mail.com",
+    "prn_no":"2",
+    "clg_id":"CLG2"
 }
 ###
 

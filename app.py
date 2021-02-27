@@ -65,7 +65,7 @@ def userUpdation():
 @app.route('/api/getUserProfile', methods=["POST"])
 def getProfileDetails():
     data = request.get_json()
-    return profile_updater.getProfileFromStuds(data["clg_id"],data["prn_no"],mongo)
+    return profile_updater.getProfileFromStuds(data["email"],mongo)
 
 ########### Student Side Exam and Result Quries #############
 @app.route('/api/getExams', methods=["POST"])
