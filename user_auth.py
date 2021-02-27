@@ -35,7 +35,7 @@ def signup(email,name, pass1, pass2, mongo):
             "err": "Password do not match!",
         })
     getter = mongo.db.users.insert_one({
-        "name": name,
+        "name": "",
         "password": pass1,
         "prn_no": "",
         "clg_id": "",
