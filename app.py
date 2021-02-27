@@ -32,7 +32,7 @@ def loginHere():
     # print(request)
     data = request.get_json()
     print(data)
-    return user_auth.login(data["email"],data["pass1"],data["isCollege"],mongo)
+    return user_auth.login(data["email"],data["pass1"],mongo)
 
 @app.route("/api/signup",methods=["POST"])
 def SignupHere():

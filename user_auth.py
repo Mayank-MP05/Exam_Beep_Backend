@@ -5,7 +5,7 @@ import random
 # Login Function
 
 
-def login(email, password, isCollege, mongo):
+def login(email, password, mongo):
     getter = mongo.db.users.find_one({"email": email})
     # if user is not present in DB
     if getter is None:
@@ -43,6 +43,7 @@ def signup(email, pass1, pass2, isCollege, mongo):
         "password": pass1,
         "prn_no": "",
         "clg_id": "",
+        "description":"",
         "email": email,
         "profilePic": dp,
         "isCollege": isCollege

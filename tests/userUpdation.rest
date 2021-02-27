@@ -3,8 +3,8 @@ content-type: application/json
 
 {
     "email": "user8@mail.com",
-    "prn_no":"new prn",
-    "clg_id":"new clg id"
+    "prn_no":"",
+    "clg_id":""
 }
 ###
 
