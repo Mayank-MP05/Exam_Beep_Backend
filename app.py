@@ -5,6 +5,7 @@ import csv
 
 ######### Modules Import ######### 
 import user_auth
+import uploaders
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/weedDB"
