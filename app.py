@@ -9,7 +9,7 @@ import csv
 import user_auth
 import uploaders
 import user_side_queries
-import college_side_queires
+import college_side_queries
 import profile_updater
 
 app = Flask(__name__)
