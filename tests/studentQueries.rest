@@ -1,0 +1,19 @@
+POST http://localhost:5000//api/getExams HTTP/1.1
+content-type: application/json
+
+{
+    "clg_id":"CLG1",
+    "branch_id":"MECH"
+}
+###
+
+
+POST http://localhost:5000/api/getResults HTTP/1.1
+content-type: application/json
+
+{
+    "clg_id":"CLG1",
+    "branch_id":"MECH"
+}
+###
+

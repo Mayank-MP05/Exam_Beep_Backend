@@ -1,0 +1,20 @@
+POST http://localhost:5000//api/userUpdation HTTP/1.1
+content-type: application/json
+
+{
+    "email": "user8@mail.com",
+    "prn_no":"new prn",
+    "clg_id":"new clg id"
+}
+###
+
+
+POST http://localhost:5000/api/getUserProfile HTTP/1.1
+content-type: application/json
+
+{
+    "prn_no":"2",
+    "clg_id":"CLG1"
+}
+###
+
