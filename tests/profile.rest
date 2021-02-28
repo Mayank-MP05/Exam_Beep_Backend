@@ -1,9 +1,9 @@
-POST http://localhost:5000/api/getUserProfile HTTP/1.1
+POST http://localhost:5000/api/getUserCollegeProfile HTTP/1.1
 content-type: application/json
 
 {
     "clg_id": "CLG1",
-    "prn_no":"1"
+    "prn_no":"CSE"
 }
 ###
 POST http://localhost:5000/api/getUserProfile HTTP/1.1

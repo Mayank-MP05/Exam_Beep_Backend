@@ -69,6 +69,11 @@ def getProfileDetails():
     data = request.get_json()
     return profile_updater.getProfileFromStuds(data["email"],mongo)
 
+@app.route('/api/getUserCollegeProfile', methods=["POST"])
+def getClgProfileDetails():
+    data = request.get_json()
+    return profile_updater.getUserCollegeProfile(data["prn_no"],data["clg_id"],mongo)
+
 ########### Student Side Exam and Result Quries #############
 @app.route('/api/getExams', methods=["POST"])
 def getExams():

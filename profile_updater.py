@@ -25,3 +25,11 @@ def getProfileFromStuds(email,mongo):
         "email":email
     })
     return json.dumps(getter,default=str)
+
+
+def getUserCollegeProfile(prn_no,clg_id,mongo):
+    getter = mongo.db.students.find_one({
+        "clg_id":clg_id,
+        "prn_no":prn_no
+    })
+    return json.dumps(getter,default=str)
