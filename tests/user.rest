@@ -13,6 +13,5 @@ content-type: application/json
 {
     "email": "user8@mail.com",
     "pass1":"zil",
-    "pass2":"zil",
-    "isCollege":false
+    "pass2":"zil"
 }

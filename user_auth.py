@@ -28,21 +28,24 @@ def login(email, password, mongo):
 # Signup Function
 
 
-def signup(email,name, pass1, pass2, mongo):
+def signup(email,isCollege,pass1, pass2, mongo):
+    print("\n\n\nSIGNING UP\n\n")
+    print(email,isCollege,pass1)
+    print("\n\n\nSIGNING UP\n\n")
     dp = random.randint(0, 8)
     if pass1 != pass2:
         return jsonify({
             "err": "Password do not match!",
         })
     getter = mongo.db.users.insert_one({
-        "name": "",
+        "name":"",
         "password": pass1,
         "prn_no": "",
         "clg_id": "",
         "description":"",
         "email": email,
         "profilePic": dp,
-        # "isCollege": isCollege
+        "isCollege":isCollege,
     }).inserted_id
     # if user is not present
     if getter is None:

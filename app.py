@@ -39,10 +39,12 @@ def loginHere():
 def SignupHere():
     # print(request)
     data = request.get_json()
+    print("\n\n\n")
     print(data)
+    print("\n\n\n")
     # return user_auth.signup(data["email"],data["pass1"],data["pass2"],data["isCollege"],mongo)  
-    return user_auth.signup(data["email"],data["name"],data["pass1"],data["pass2"],mongo)  
-
+    return user_auth.signup(data["email"],data["isCollege"],data["pass1"],data["pass2"],mongo)  
+    # return
 ################ Uploader Functions ########################
 @app.route('/api/upload', methods=["POST"])
 def uploadData():
